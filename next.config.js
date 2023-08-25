@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
 
-module.exports = nextConfig
+const branchName = process.env.BRANCH_NAME ? "/" + process.env.BRANCH_NAME : "";
+
+const nextConfig = {
+    experimental:{
+        appDir: true
+    },
+    reactStrictMode: true,
+    assetPrefix: branchName,
+    basePath: branchName
+}
+
+export default nextConfig;
